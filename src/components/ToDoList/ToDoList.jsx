@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import todo from '../../todo.json';
 import css from './ToDoList.module.css';
+import { nanoid } from 'nanoid';
 
 import { ToDoItem } from 'components/ToDoItem/ToDoItem';
 
@@ -8,6 +9,12 @@ export class ToDoList extends Component{
     state = {
        toDoList: todo,
     };
+
+    toDelete = (id) =>{
+    this.setState((prevState)=>({
+        toDoList: prevState.toDoList.filter((itm)=>itm.id!==id),
+    }))
+    }
 
     render(){
         return(
@@ -17,9 +24,12 @@ export class ToDoList extends Component{
 
                 {
                     this.state.toDoList.map(itm=>{
-                        return <li >
+                        return <li key ={nanoid()}>
                             
-                                <ToDoItem todoItem ={itm}/>
+                                <ToDoItem
+                                todoItem = {itm}
+                                toDelete = {this.toDelete}
+                                />
                                                         
                                 </li>
                     })

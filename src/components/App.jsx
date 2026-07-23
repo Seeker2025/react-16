@@ -19,6 +19,8 @@ export class App extends Component{
     })
   }
 
+  
+
   render(){
     return(
       <div>
@@ -30,6 +32,7 @@ export class App extends Component{
         >
           Open My Modal
         </button>
+
         {
           this.state.isVisible &&  <Modalka toClose = {this.toClose}/>
         }
