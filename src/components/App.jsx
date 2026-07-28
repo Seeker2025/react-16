@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Modalka } from './Modalka/Modalka';
-import { ToDoList } from "./ToDoList/ToDoList";
+import { ToDoList } from './ToDoList/ToDoList';
+// import { Form } from './Form/Form';
 
 export class App extends Component{
   state ={
@@ -32,6 +33,8 @@ export class App extends Component{
         >
           Open My Modal
         </button>
+
+        {/* <Form/> */}
 
         {
           this.state.isVisible &&  <Modalka toClose = {this.toClose}/>
