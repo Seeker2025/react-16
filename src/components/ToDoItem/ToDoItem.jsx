@@ -21,7 +21,9 @@ export const ToDoItem = ({
                 </div>
 
                 <button
+                disabled ={!todoItem.completed}
                 type = "button"
+                arial-label = "Close"
                 onClick = {()=>toDelete(todoItem.id)}
                 >
                     X
